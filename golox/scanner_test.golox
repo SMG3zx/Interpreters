@@ -1,9 +1,17 @@
-(){} ,.-+;*/ != == <= >= < > =
-"hello world"
-123
-45.67
-foo
-bar123
-_temp_value
-print true false nil and class else fun for if or return super this var while
-@
+// This is a comment
+var x = 42;
+var pi = 3.14;
+var name = "golox";
+var sum = x + 1;
+
+if (x == 42) {
+    print "yes";
+}
+
+fun greet(who) {
+    return who;
+}
+
+while (false) {
+    x = x + 1;
+}

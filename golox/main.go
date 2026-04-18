@@ -389,6 +389,8 @@ func (s *Scanner) scanToken() {
 			for {
 				if s.peek() != '\n' && !s.isAtEnd() {
 					s.advance()
+				} else {
+					break
 				}
 			}
 
@@ -430,7 +432,7 @@ func (s *Scanner) identifier() {
 	text := s.source[s.start:s.current]
 	t_Type, OK := s.keywords[string(text)]
 	if OK {
-		t_Type = IDENTIFIER
+		// We do nothing
 	} else {
 		// Regular user-defined indentifier
 		t_Type = IDENTIFIER
@@ -466,6 +468,8 @@ func (s *Scanner) number() {
 		for {
 			if s.isDigit(s.peek()) {
 				s.advance()
+			} else {
+				break
 			}
 		}
 	}
