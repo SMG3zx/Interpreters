@@ -9,3 +9,5 @@
 [Go - Slices](https://gobyexample.com/slices)
 [More information on the design of slices](https://go.dev/blog/slices-intro#slices)
 [Golangs while implementation](https://go.dev/tour/flowcontrol/3)
+[Golang Char](https://gobyexample.com/strings-and-runes)
+[Golang maps](https://gobyexample.com/maps)
