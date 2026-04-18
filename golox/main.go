@@ -125,6 +125,98 @@ const (
 	EOF
 )
 
+func (t TokenType) String() string {
+	switch t {
+	case LEFT_PAREN:
+		return "("
+	case RIGHT_PAREN:
+		return ")"
+	case LEFT_BRACE:
+		return "{"
+	case RIGHT_BRACE:
+		return "}"
+	case COMMA:
+		return ","
+	case DOT:
+		return "."
+	case MINUS:
+		return "-"
+	case PLUS:
+		return "+"
+	case SEMICOLON:
+		return ";"
+	case SLASH:
+		return "/"
+	case STAR:
+		return "*"
+
+	// One or two character tokens.
+	case BANG:
+		return "!"
+	case BANG_EQUAL:
+		return "!="
+	case EQUAL:
+		return "="
+	case EQUAL_EQUAL:
+		return "=="
+	case GREATER:
+		return ">"
+	case GREATER_EQUAL:
+		return ">="
+	case LESS:
+		return "<"
+	case LESS_EQUAL:
+		return "<="
+
+	// Literals
+	case IDENTIFIER:
+		return "IDENTIFIER"
+	case STRING:
+		return "STRING"
+	case NUMBER:
+		return "NUMBER"
+
+	// Keywords
+	case AND:
+		return "and"
+	case CLASS:
+		return "class"
+	case ELSE:
+		return "else"
+	case FALSE:
+		return "false"
+	case FUN:
+		return "fun"
+	case FOR:
+		return "for"
+	case IF:
+		return "if"
+	case NIL:
+		return "nil"
+	case OR:
+		return "or"
+	case PRINT:
+		return "print"
+	case RETURN:
+		return "return"
+	case SUPER:
+		return "super"
+	case THIS:
+		return "this"
+	case TRUE:
+		return "true"
+	case VAR:
+		return "var"
+	case WHILE:
+		return "while"
+
+	case EOF:
+		return "EOF"
+	}
+
+	return "UNKNOWN"
+}
+
 type Token struct {
 	t_Type TokenType
 	/*
@@ -157,7 +249,7 @@ Prints with the following formatting
 */
 
 func (t Token) toString() string {
-	return fmt.Sprintf("%d %s %v", t.t_Type, t.lexeme, t.literal)
+	return fmt.Sprintf("tokenType:%s, tokenValue:%v", t.t_Type.String(), t.literal)
 }
 
 func report(line int, where, message string) {
@@ -348,7 +440,8 @@ func (s *Scanner) identifier() {
 	if OK {
 		t_Type = IDENTIFIER
 	} else {
-		panic("We need to handle wrongly passed tokens in identifier()")
+		// Regular user-defined indentifier
+		t_Type = IDENTIFIER
 	}
 	s.addAbstractToken(t_Type)
 
