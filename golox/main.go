@@ -128,45 +128,45 @@ const (
 func (t TokenType) String() string {
 	switch t {
 	case LEFT_PAREN:
-		return "("
+		return "LEFT_PAREN"
 	case RIGHT_PAREN:
-		return ")"
+		return "RIGHT_PAREN"
 	case LEFT_BRACE:
-		return "{"
+		return "LEFT_BRACE"
 	case RIGHT_BRACE:
-		return "}"
+		return "RIGHT_BRACE"
 	case COMMA:
-		return ","
+		return "COMMA"
 	case DOT:
-		return "."
+		return "DOT"
 	case MINUS:
-		return "-"
+		return "MINUS"
 	case PLUS:
-		return "+"
+		return "PLUS"
 	case SEMICOLON:
-		return ";"
+		return "SEMICOLON"
 	case SLASH:
-		return "/"
+		return "SLASH"
 	case STAR:
-		return "*"
+		return "STAR"
 
 	// One or two character tokens.
 	case BANG:
-		return "!"
+		return "BANG"
 	case BANG_EQUAL:
-		return "!="
+		return "BANG_EQUAL"
 	case EQUAL:
-		return "="
+		return "EQUAL"
 	case EQUAL_EQUAL:
-		return "=="
+		return "EQUAL_EQUAL"
 	case GREATER:
-		return ">"
+		return "GREATER"
 	case GREATER_EQUAL:
-		return ">="
+		return "GREATER_EQUAL"
 	case LESS:
-		return "<"
+		return "LESS"
 	case LESS_EQUAL:
-		return "<="
+		return "LESS_EQUAL"
 
 	// Literals
 	case IDENTIFIER:
@@ -178,37 +178,37 @@ func (t TokenType) String() string {
 
 	// Keywords
 	case AND:
-		return "and"
+		return "AND"
 	case CLASS:
-		return "class"
+		return "CLASS"
 	case ELSE:
-		return "else"
+		return "ELSE"
 	case FALSE:
-		return "false"
+		return "FALSE"
 	case FUN:
-		return "fun"
+		return "FUN"
 	case FOR:
-		return "for"
+		return "FOR"
 	case IF:
-		return "if"
+		return "IF"
 	case NIL:
-		return "nil"
+		return "NIL"
 	case OR:
-		return "or"
+		return "OR"
 	case PRINT:
-		return "print"
+		return "PRINT"
 	case RETURN:
-		return "return"
+		return "RETURN"
 	case SUPER:
-		return "super"
+		return "SUPER"
 	case THIS:
-		return "this"
+		return "THIS"
 	case TRUE:
-		return "true"
+		return "TRUE"
 	case VAR:
-		return "var"
+		return "VAR"
 	case WHILE:
-		return "while"
+		return "WHILE"
 
 	case EOF:
 		return "EOF"
@@ -240,16 +240,8 @@ func (t Token) New(passed_t_Type TokenType, passed_lexeme string, passed_literal
 	}
 }
 
-/*
-Prints with the following formatting
-
-	%d = integer
-	%s = string
-	%v = any value in a default format
-*/
-
 func (t Token) toString() string {
-	return fmt.Sprintf("tokenType:%s, tokenValue:%v", t.t_Type.String(), t.literal)
+	return fmt.Sprintf("Type:%s, Lexeme:%s, Value:%v", t.t_Type.String(), t.lexeme, t.literal)
 }
 
 func report(line int, where, message string) {
