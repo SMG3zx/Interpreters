@@ -4,7 +4,7 @@ var pi = 3.14;
 var name = "golox";
 var sum = x + 1;
 
-if (x == 42) {
+if (x == 42.0) {
     print "yes";
 }
 

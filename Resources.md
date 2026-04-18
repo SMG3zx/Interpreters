@@ -11,3 +11,8 @@
 [Golangs while implementation](https://go.dev/tour/flowcontrol/3)
 [Golang Char](https://gobyexample.com/strings-and-runes)
 [Golang maps](https://gobyexample.com/maps)
+[File Paths Go](https://gobyexample.com/file-paths)
+[Writing Files](https://gobyexample.com/writing-files)
+
+# Porting AI Assistence
+1. Claude Sonnet 4.6
